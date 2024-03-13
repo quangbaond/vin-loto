@@ -17,7 +17,7 @@ const room_prefix = {
         max: 100000
     },
     trung_cap: {
-        name: 'so_chan',
+        name: 'trung_cap',
         users: [],
         messages: [],
         min: 100000,
