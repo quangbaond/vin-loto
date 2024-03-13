@@ -144,35 +144,35 @@ const startPhienSoCap = () => {
                             if (phien.result > 15 && phien.result % 2 === 0) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
                                     // hồi lại tiền cược và thêm 12% tiền cược
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
                                 if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
                             } else if (phien.result < 15 && phien.result % 2 === 1) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
                                 if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
                             } else if (phien.result > 15 && phien.result % 2 === 1) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
                                 if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
                             } else if (phien.result < 15 && phien.result % 2 === 0) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
                                 if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
                             }
                         } else if (wanfa.length == 1) {
@@ -220,82 +220,82 @@ const startPhienSoCap = () => {
 
                             if (phien.result > 15 && phien.result % 2 === 0) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Lớn' && value4 === 'Nhỏ' || value3 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Chẵn' && value4 === 'Lẻ' || value3 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Lớn' && value3 === 'Nhỏ' || value1 === 'Nhỏ' && value3 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value3 === 'Lẻ' || value1 === 'Lẻ' && value3 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Lớn' && value4 === 'Nhỏ' || value2 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Chẵn' && value4 === 'Lẻ' || value2 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
 
                             } else if (phien.result < 15 && phien.result % 2 === 1) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Lớn' && value4 === 'Nhỏ' || value3 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Chẵn' && value4 === 'Lẻ' || value3 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Lớn' && value3 === 'Nhỏ' || value1 === 'Nhỏ' && value3 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value3 === 'Lẻ' || value1 === 'Lẻ' && value3 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Lớn' && value4 === 'Nhỏ' || value2 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Chẵn' && value4 === 'Lẻ' || value2 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
 
                             } else if (phien.result > 15 && phien.result % 2 === 1) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Lớn' && value4 === 'Nhỏ' || value3 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Chẵn' && value4 === 'Lẻ' || value3 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Lớn' && value3 === 'Nhỏ' || value1 === 'Nhỏ' && value3 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value3 === 'Lẻ' || value1 === 'Lẻ' && value3 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Lớn' && value4 === 'Nhỏ' || value2 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Chẵn' && value4 === 'Lẻ' || value2 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
 
                             } else if (phien.result < 15 && phien.result % 2 === 0) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Lớn' && value4 === 'Nhỏ' || value3 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Chẵn' && value4 === 'Lẻ' || value3 === 'Lẻ' && value4 === 'Chẵn') {
                                     result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
 
                                 } else if (value1 === 'Lớn' && value3 === 'Nhỏ' || value1 === 'Nhỏ' && value3 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value3 === 'Lẻ' || value1 === 'Lẻ' && value3 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Lớn' && value4 === 'Nhỏ' || value2 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Chẵn' && value4 === 'Lẻ' || value2 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
                             }
@@ -425,35 +425,35 @@ const startPhienTrungCap = () => {
                             if (phien.result > 15 && phien.result % 2 === 0) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
                                     // hồi lại tiền cược và thêm 12% tiền cược
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
                                 if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
                             } else if (phien.result < 15 && phien.result % 2 === 1) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
                                 if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
                             } else if (phien.result > 15 && phien.result % 2 === 1) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
                                 if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
                             } else if (phien.result < 15 && phien.result % 2 === 0) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
                                 if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
                             }
                         } else if (wanfa.length == 1) {
@@ -501,82 +501,82 @@ const startPhienTrungCap = () => {
 
                             if (phien.result > 15 && phien.result % 2 === 0) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Lớn' && value4 === 'Nhỏ' || value3 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Chẵn' && value4 === 'Lẻ' || value3 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Lớn' && value3 === 'Nhỏ' || value1 === 'Nhỏ' && value3 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value3 === 'Lẻ' || value1 === 'Lẻ' && value3 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Lớn' && value4 === 'Nhỏ' || value2 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Chẵn' && value4 === 'Lẻ' || value2 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
 
                             } else if (phien.result < 15 && phien.result % 2 === 1) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Lớn' && value4 === 'Nhỏ' || value3 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Chẵn' && value4 === 'Lẻ' || value3 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Lớn' && value3 === 'Nhỏ' || value1 === 'Nhỏ' && value3 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value3 === 'Lẻ' || value1 === 'Lẻ' && value3 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Lớn' && value4 === 'Nhỏ' || value2 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Chẵn' && value4 === 'Lẻ' || value2 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
 
                             } else if (phien.result > 15 && phien.result % 2 === 1) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Lớn' && value4 === 'Nhỏ' || value3 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Chẵn' && value4 === 'Lẻ' || value3 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Lớn' && value3 === 'Nhỏ' || value1 === 'Nhỏ' && value3 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value3 === 'Lẻ' || value1 === 'Lẻ' && value3 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Lớn' && value4 === 'Nhỏ' || value2 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Chẵn' && value4 === 'Lẻ' || value2 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
 
                             } else if (phien.result < 15 && phien.result % 2 === 0) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Lớn' && value4 === 'Nhỏ' || value3 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Chẵn' && value4 === 'Lẻ' || value3 === 'Lẻ' && value4 === 'Chẵn') {
                                     result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
 
                                 } else if (value1 === 'Lớn' && value3 === 'Nhỏ' || value1 === 'Nhỏ' && value3 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value3 === 'Lẻ' || value1 === 'Lẻ' && value3 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Lớn' && value4 === 'Nhỏ' || value2 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Chẵn' && value4 === 'Lẻ' || value2 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
                             }
@@ -707,35 +707,35 @@ const startPhienCaoCap = () => {
                             if (phien.result > 15 && phien.result % 2 === 0) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
                                     // hồi lại tiền cược và thêm 12% tiền cược
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
                                 if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
                             } else if (phien.result < 15 && phien.result % 2 === 1) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
                                 if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
                             } else if (phien.result > 15 && phien.result % 2 === 1) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
                                 if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
                             } else if (phien.result < 15 && phien.result % 2 === 0) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
                                 if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
                             }
                         } else if (wanfa.length == 1) {
@@ -783,82 +783,82 @@ const startPhienCaoCap = () => {
 
                             if (phien.result > 15 && phien.result % 2 === 0) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Lớn' && value4 === 'Nhỏ' || value3 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Chẵn' && value4 === 'Lẻ' || value3 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Lớn' && value3 === 'Nhỏ' || value1 === 'Nhỏ' && value3 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value3 === 'Lẻ' || value1 === 'Lẻ' && value3 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Lớn' && value4 === 'Nhỏ' || value2 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Chẵn' && value4 === 'Lẻ' || value2 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
 
                             } else if (phien.result < 15 && phien.result % 2 === 1) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Lớn' && value4 === 'Nhỏ' || value3 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Chẵn' && value4 === 'Lẻ' || value3 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Lớn' && value3 === 'Nhỏ' || value1 === 'Nhỏ' && value3 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value3 === 'Lẻ' || value1 === 'Lẻ' && value3 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Lớn' && value4 === 'Nhỏ' || value2 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Chẵn' && value4 === 'Lẻ' || value2 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
 
                             } else if (phien.result > 15 && phien.result % 2 === 1) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Lớn' && value4 === 'Nhỏ' || value3 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Chẵn' && value4 === 'Lẻ' || value3 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Lớn' && value3 === 'Nhỏ' || value1 === 'Nhỏ' && value3 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value3 === 'Lẻ' || value1 === 'Lẻ' && value3 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Lớn' && value4 === 'Nhỏ' || value2 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Chẵn' && value4 === 'Lẻ' || value2 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
 
                             } else if (phien.result < 15 && phien.result % 2 === 0) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Lớn' && value4 === 'Nhỏ' || value3 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Chẵn' && value4 === 'Lẻ' || value3 === 'Lẻ' && value4 === 'Chẵn') {
                                     result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
 
                                 } else if (value1 === 'Lớn' && value3 === 'Nhỏ' || value1 === 'Nhỏ' && value3 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value3 === 'Lẻ' || value1 === 'Lẻ' && value3 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Lớn' && value4 === 'Nhỏ' || value2 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Chẵn' && value4 === 'Lẻ' || value2 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
                             }
@@ -990,35 +990,35 @@ const startPhienVip = () => {
                             if (phien.result > 15 && phien.result % 2 === 0) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
                                     // hồi lại tiền cược và thêm 12% tiền cược
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
                                 if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
                             } else if (phien.result < 15 && phien.result % 2 === 1) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
                                 if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
                             } else if (phien.result > 15 && phien.result % 2 === 1) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
                                 if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
                             } else if (phien.result < 15 && phien.result % 2 === 0) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
                                 if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
                             }
                         } else if (wanfa.length == 1) {
@@ -1066,82 +1066,82 @@ const startPhienVip = () => {
 
                             if (phien.result > 15 && phien.result % 2 === 0) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Lớn' && value4 === 'Nhỏ' || value3 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Chẵn' && value4 === 'Lẻ' || value3 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Lớn' && value3 === 'Nhỏ' || value1 === 'Nhỏ' && value3 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value3 === 'Lẻ' || value1 === 'Lẻ' && value3 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Lớn' && value4 === 'Nhỏ' || value2 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Chẵn' && value4 === 'Lẻ' || value2 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
 
                             } else if (phien.result < 15 && phien.result % 2 === 1) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Lớn' && value4 === 'Nhỏ' || value3 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Chẵn' && value4 === 'Lẻ' || value3 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Lớn' && value3 === 'Nhỏ' || value1 === 'Nhỏ' && value3 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value3 === 'Lẻ' || value1 === 'Lẻ' && value3 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Lớn' && value4 === 'Nhỏ' || value2 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Chẵn' && value4 === 'Lẻ' || value2 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
 
                             } else if (phien.result > 15 && phien.result % 2 === 1) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Lớn' && value4 === 'Nhỏ' || value3 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Chẵn' && value4 === 'Lẻ' || value3 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Lớn' && value3 === 'Nhỏ' || value1 === 'Nhỏ' && value3 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value3 === 'Lẻ' || value1 === 'Lẻ' && value3 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Lớn' && value4 === 'Nhỏ' || value2 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Chẵn' && value4 === 'Lẻ' || value2 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
 
                             } else if (phien.result < 15 && phien.result % 2 === 0) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value2 === 'Lẻ' || value1 === 'Lẻ' && value2 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Lớn' && value4 === 'Nhỏ' || value3 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value3 === 'Chẵn' && value4 === 'Lẻ' || value3 === 'Lẻ' && value4 === 'Chẵn') {
                                     result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
 
                                 } else if (value1 === 'Lớn' && value3 === 'Nhỏ' || value1 === 'Nhỏ' && value3 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value1 === 'Chẵn' && value3 === 'Lẻ' || value1 === 'Lẻ' && value3 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Lớn' && value4 === 'Nhỏ' || value2 === 'Nhỏ' && value4 === 'Lớn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 } else if (value2 === 'Chẵn' && value4 === 'Lẻ' || value2 === 'Lẻ' && value4 === 'Chẵn') {
-                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.money
+                                    result_money = lotos.result_money * rate_lon_nho / 100 * 12 + lotos.result_money
                                 }
 
                             }
