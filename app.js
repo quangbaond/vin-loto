@@ -141,6 +141,7 @@ const startPhienSoCap = () => {
                             const rate_chan_le = 1.95
                             const rate_lon_nho = 2.02
 
+
                             if (phien.result > 15 && phien.result % 2 === 0) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
                                     // hồi lại tiền cược và thêm 12% tiền cược
@@ -181,18 +182,29 @@ const startPhienSoCap = () => {
                             const type = wans[0]
                             const value = wans[1]
                             const rate = parseFloat(wans[2])
-                            if (value === 'Lớn' && phien.result > 15) {
-                                result_money = lotos.result_money * rate
+                        
+                            if(value === 'Lớn') {
+                                phien.result = Math.floor(15 * 27)
+                                phien.result_lon_nho = 'Lớn'
+                                phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
+                            } else if(value === 'Nhỏ') {
+                                phien.result = Math.floor(0 * 14)
+                                phien.result_lon_nho = 'Nhỏ'
+                                phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
+                            } 
+                            else if(value === 'Chẵn') {
+                                phien.result = Math.floor(Math.random() * 8) * 2;
+                                phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
+                                phien.result_chan_le = 'Chẵn'
+                            } else if(value === 'Lẻ') {
+                                phien.result = (Math.floor(Math.random() * 7) + 15) * 2;
+                                phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
+                                phien.result_chan_le = 'Lẻ'
                             }
-                            if (value === 'Nhỏ' && phien.result < 15) {
-                                result_money = lotos.result_money * rate
-                            }
-                            if (value === 'Chẵn' && phien.result % 2 === 0) {
-                                result_money = lotos.result_money * rate
-                            }
-                            if (value === 'Lẻ' && phien.result % 2 === 1) {
-                                result_money = lotos.result_money * rate
-                            }
+
+                            io.emit('so-cap', phien)
+                            result_money = lotos.result_money * rate
+                            
                         } else if (wanfa.length === 4) {
                             const w1 = wanfa[0]
                             const wans1 = w1.split('@')
@@ -447,6 +459,8 @@ const startPhienTrungCap = () => {
                             const wans = w.split('@')
                             const type = wans[0]
                             const value = wans[1]
+                            const rate = parseFloat(wans[2])
+                        
                             if(value === 'Lớn') {
                                 phien.result = Math.floor(15 * 27)
                                 phien.result_lon_nho = 'Lớn'
@@ -465,6 +479,8 @@ const startPhienTrungCap = () => {
                                 phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
                                 phien.result_chan_le = 'Lẻ'
                             }
+
+                            io.emit('trung-cap', phien)
                             result_money = lotos.result_money * rate
                             
                         } else if (wanfa.length === 4) {
@@ -682,6 +698,7 @@ const startPhienCaoCap = () => {
                             const rate_chan_le = 1.95
                             const rate_lon_nho = 2.02
 
+
                             if (phien.result > 15 && phien.result % 2 === 0) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
                                     // hồi lại tiền cược và thêm 12% tiền cược
@@ -722,18 +739,29 @@ const startPhienCaoCap = () => {
                             const type = wans[0]
                             const value = wans[1]
                             const rate = parseFloat(wans[2])
-                            if (value === 'Lớn' && phien.result > 15) {
-                                result_money = lotos.result_money * rate
+                        
+                            if(value === 'Lớn') {
+                                phien.result = Math.floor(15 * 27)
+                                phien.result_lon_nho = 'Lớn'
+                                phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
+                            } else if(value === 'Nhỏ') {
+                                phien.result = Math.floor(0 * 14)
+                                phien.result_lon_nho = 'Nhỏ'
+                                phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
+                            } 
+                            else if(value === 'Chẵn') {
+                                phien.result = Math.floor(Math.random() * 8) * 2;
+                                phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
+                                phien.result_chan_le = 'Chẵn'
+                            } else if(value === 'Lẻ') {
+                                phien.result = (Math.floor(Math.random() * 7) + 15) * 2;
+                                phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
+                                phien.result_chan_le = 'Lẻ'
                             }
-                            if (value === 'Nhỏ' && phien.result < 15) {
-                                result_money = lotos.result_money * rate
-                            }
-                            if (value === 'Chẵn' && phien.result % 2 === 0) {
-                                result_money = lotos.result_money * rate
-                            }
-                            if (value === 'Lẻ' && phien.result % 2 === 1) {
-                                result_money = lotos.result_money * rate
-                            }
+
+                            io.emit('cao-cap', phien)
+                            result_money = lotos.result_money * rate
+                            
                         } else if (wanfa.length === 4) {
                             const w1 = wanfa[0]
                             const wans1 = w1.split('@')
@@ -950,6 +978,7 @@ const startPhienVip = () => {
                             const rate_chan_le = 1.95
                             const rate_lon_nho = 2.02
 
+
                             if (phien.result > 15 && phien.result % 2 === 0) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
                                     // hồi lại tiền cược và thêm 12% tiền cược
@@ -990,18 +1019,29 @@ const startPhienVip = () => {
                             const type = wans[0]
                             const value = wans[1]
                             const rate = parseFloat(wans[2])
-                            if (value === 'Lớn' && phien.result > 15) {
-                                result_money = lotos.result_money * rate
+                        
+                            if(value === 'Lớn') {
+                                phien.result = Math.floor(15 * 27)
+                                phien.result_lon_nho = 'Lớn'
+                                phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
+                            } else if(value === 'Nhỏ') {
+                                phien.result = Math.floor(0 * 14)
+                                phien.result_lon_nho = 'Nhỏ'
+                                phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
+                            } 
+                            else if(value === 'Chẵn') {
+                                phien.result = Math.floor(Math.random() * 8) * 2;
+                                phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
+                                phien.result_chan_le = 'Chẵn'
+                            } else if(value === 'Lẻ') {
+                                phien.result = (Math.floor(Math.random() * 7) + 15) * 2;
+                                phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
+                                phien.result_chan_le = 'Lẻ'
                             }
-                            if (value === 'Nhỏ' && phien.result < 15) {
-                                result_money = lotos.result_money * rate
-                            }
-                            if (value === 'Chẵn' && phien.result % 2 === 0) {
-                                result_money = lotos.result_money * rate
-                            }
-                            if (value === 'Lẻ' && phien.result % 2 === 1) {
-                                result_money = lotos.result_money * rate
-                            }
+
+                            io.emit('vip', phien)
+                            result_money = lotos.result_money * rate
+                            
                         } else if (wanfa.length === 4) {
                             const w1 = wanfa[0]
                             const wans1 = w1.split('@')
