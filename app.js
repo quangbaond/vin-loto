@@ -330,8 +330,8 @@ const startPhienSoCap = () => {
                                 }
                                 const user = results[0]
                                 io.emit(`user-${user.id}`, {
-                                    message: `Rất tiếc bạn đã không trúng thưởng vào phiên ${phien.id}`,
-                                    balance: user.balance + result_money
+                                    message: `Rất tiếc bạn đã không trúng thưởng`,
+                                    balance: user.balance
                                 })
                             })
                         }
