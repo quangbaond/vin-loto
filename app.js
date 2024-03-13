@@ -569,25 +569,10 @@ const startPhienTrungCap = () => {
                         console.log(user.balance + result_money)
                         const balance = user.balance + result_money
                         console.log('balance', balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
-                        if (lotos.result_money > 0 && result_money > 0) {
-                            db.query('UPDATE users SET balance = ? WHERE id = ?', [balance, user.id], function (error, results, fields) {
-                                if (error) {
-                                    console.log('error.message', error.message)
-                                }
-                                // trả socket về client cho user id
-                                // lấy ra số tiền của user hiện tại sau khi update
-                                db.query('SELECT * FROM users WHERE id = ?', [user.id], function (error, results, fields) {
-                                    if (error) {
-                                        console.log('error.message', error.message)
-                                    }
-                                    const user = results[0]
-                                    io.emit(`user-${user.id}`, {
-                                        message: `Chúc mừng bạn đã trúng thưởng ${result_money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`,
-                                        balance: balance
-                                    })
-                                })
-                            })
-                        } else {
+                        db.query('UPDATE users SET balance = ? WHERE id = ?', [balance, user.id], function (error, results, fields) {
+                            if (error) {
+                                console.log('error.message', error.message)
+                            }
                             // trả socket về client cho user id
                             // lấy ra số tiền của user hiện tại sau khi update
                             db.query('SELECT * FROM users WHERE id = ?', [user.id], function (error, results, fields) {
@@ -596,11 +581,11 @@ const startPhienTrungCap = () => {
                                 }
                                 const user = results[0]
                                 io.emit(`user-${user.id}`, {
-                                    message: `Rất tiếc bạn đã không trúng thưởng vào phiên ${phien.id}`,
-                                    balance: user.balance + result_money
+                                    message: `Chúc mừng bạn đã trúng thưởng ${result_money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`,
+                                    balance: balance
                                 })
                             })
-                        }
+                        })
                     })
                 })
             })
@@ -851,25 +836,10 @@ const startPhienCaoCap = () => {
                         console.log(user.balance + result_money)
                         const balance = user.balance + result_money
                         console.log('balance', balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
-                        if (lotos.result_money > 0 && result_money > 0) {
-                            db.query('UPDATE users SET balance = ? WHERE id = ?', [balance, user.id], function (error, results, fields) {
-                                if (error) {
-                                    console.log('error.message', error.message)
-                                }
-                                // trả socket về client cho user id
-                                // lấy ra số tiền của user hiện tại sau khi update
-                                db.query('SELECT * FROM users WHERE id = ?', [user.id], function (error, results, fields) {
-                                    if (error) {
-                                        console.log('error.message', error.message)
-                                    }
-                                    const user = results[0]
-                                    io.emit(`user-${user.id}`, {
-                                        message: `Chúc mừng bạn đã trúng thưởng ${result_money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`,
-                                        balance: balance
-                                    })
-                                })
-                            })
-                        } else {
+                        db.query('UPDATE users SET balance = ? WHERE id = ?', [balance, user.id], function (error, results, fields) {
+                            if (error) {
+                                console.log('error.message', error.message)
+                            }
                             // trả socket về client cho user id
                             // lấy ra số tiền của user hiện tại sau khi update
                             db.query('SELECT * FROM users WHERE id = ?', [user.id], function (error, results, fields) {
@@ -878,11 +848,11 @@ const startPhienCaoCap = () => {
                                 }
                                 const user = results[0]
                                 io.emit(`user-${user.id}`, {
-                                    message: `Rất tiếc bạn đã không trúng thưởng vào phiên ${phien.id}`,
-                                    balance: user.balance + result_money
+                                    message: `Chúc mừng bạn đã trúng thưởng ${result_money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`,
+                                    balance: balance
                                 })
                             })
-                        }
+                        })
                     })
                 })
             })
@@ -1134,25 +1104,10 @@ const startPhienVip = () => {
                         console.log(user.balance + result_money)
                         const balance = user.balance + result_money
                         console.log('balance', balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
-                        if (lotos.result_money > 0 && result_money > 0) {
-                            db.query('UPDATE users SET balance = ? WHERE id = ?', [balance, user.id], function (error, results, fields) {
-                                if (error) {
-                                    console.log('error.message', error.message)
-                                }
-                                // trả socket về client cho user id
-                                // lấy ra số tiền của user hiện tại sau khi update
-                                db.query('SELECT * FROM users WHERE id = ?', [user.id], function (error, results, fields) {
-                                    if (error) {
-                                        console.log('error.message', error.message)
-                                    }
-                                    const user = results[0]
-                                    io.emit(`user-${user.id}`, {
-                                        message: `Chúc mừng bạn đã trúng thưởng ${result_money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`,
-                                        balance: balance
-                                    })
-                                })
-                            })
-                        } else {
+                        db.query('UPDATE users SET balance = ? WHERE id = ?', [balance, user.id], function (error, results, fields) {
+                            if (error) {
+                                console.log('error.message', error.message)
+                            }
                             // trả socket về client cho user id
                             // lấy ra số tiền của user hiện tại sau khi update
                             db.query('SELECT * FROM users WHERE id = ?', [user.id], function (error, results, fields) {
@@ -1161,11 +1116,11 @@ const startPhienVip = () => {
                                 }
                                 const user = results[0]
                                 io.emit(`user-${user.id}`, {
-                                    message: `Rất tiếc bạn đã không trúng thưởng vào phiên ${phien.id}`,
-                                    balance: user.balance + result_money
+                                    message: `Chúc mừng bạn đã trúng thưởng ${result_money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`,
+                                    balance: balance
                                 })
                             })
-                        }
+                        })
                     })
                 })
             })
