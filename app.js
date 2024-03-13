@@ -455,8 +455,8 @@ const startPhienTrungCap = () => {
                                 phien.result = Math.floor(0 * 14)
                                 phien.result_lon_nho = 'Nhỏ'
                                 phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
-                            }
-                            if(value === 'Chẵn') {
+                            } 
+                            else if(value === 'Chẵn') {
                                 phien.result = Math.floor(Math.random() * 8) * 2;
                                 phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
                                 phien.result_chan_le = 'Chẵn'
