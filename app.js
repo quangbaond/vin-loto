@@ -1288,8 +1288,8 @@ app.post('/dat-cuoc', (req, res, next) => {
                 if (!phien) {
                     return res.status(400).json({message: 'Phiên cược không tồn tại hoặc đã kết thúc'})
                 }
-                let time_text = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
-                time_text = moment(time_text1).format('HH:mm:ss')
+                let time_text1 = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
+                time_text1 = moment(time_text1).format('HH:mm:ss')
 
                 phien.users.push({
                     id: id,
@@ -1297,7 +1297,7 @@ app.post('/dat-cuoc', (req, res, next) => {
                     wanfa: wanfa,
                     result_money: result_money,
                     username: user.username,
-                    time: time_text,
+                    time: time_text1,
                 })
                 return res.status(200).json({message: 'Đặt cược thành công'})
             })
