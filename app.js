@@ -1177,9 +1177,9 @@ const startPhienVip = () => {
         }
 
         // create user aảo trong phien
-        let time = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
+        let timeZo = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
         // format YYYY-MM-DD HH:MM:SS
-        time = moment(created_at).format('HH:mm:ss')
+        timeZo = moment(created_at).format('HH:mm:ss')
         const user = {
             id: Math.random().toString(36).substring(7),
             money: Math.floor(Math.random() * 100000) * 100,
@@ -1189,7 +1189,7 @@ const startPhienVip = () => {
             // username: 'user' + Math.floor(Math.random() * 100),
             //user name random ky tu
             username: Math.random().toString(36).substring(7),
-            time: time
+            time: timeZo
         }
         setTimeout(() => {
             phien.users.push(user)
