@@ -7,6 +7,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 const cors = require('cors')
 const db = require('./db')
+const moment = require('moment')
 const room_prefix = {
     so_cap: {
         name: 'so_cap',
@@ -1251,8 +1252,11 @@ app.post('/dat-cuoc', (req, res, next) => {
             // created at giờ việt nam
 
             // const updated_at = new Date().toISOString().substr(0, 19).replace('T', ' ')
-            const created_at = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
-            const updated_at = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
+            let created_at = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
+            let updated_at = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
+            // format YYYY-MM-DD HH:MM:SS
+            created_at = moment(created_at).format('YYYY-MM-DD HH:mm:ss')
+            updated_at = moment(updated_at).format('YYYY-MM-DD HH:mm:ss')
             db.query('INSERT INTO lotos (user_id, room, money, wanfan, result_money, phien_id, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', [id, roomName, money, wanfa, result_money, phien_id, created_at, updated_at], function (error, results, fields) {
                 if (error) {
                     console.log('error', error)
