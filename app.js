@@ -1247,8 +1247,12 @@ app.post('/dat-cuoc', (req, res, next) => {
             if (error) {
                 return res.status(500).json({message: error.message})
             }
-            const created_at = new Date().toISOString().substr(0, 19).replace('T', ' ')
-            const updated_at = new Date().toISOString().substr(0, 19).replace('T', ' ')
+            // const created_at = new Date().toISOString().substr(0, 19).replace('T', ' ')
+            // created at giờ việt nam
+
+            // const updated_at = new Date().toISOString().substr(0, 19).replace('T', ' ')
+            const created_at = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
+            const updated_at = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
             db.query('INSERT INTO lotos (user_id, room, money, wanfan, result_money, phien_id, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', [id, roomName, money, wanfa, result_money, phien_id, created_at, updated_at], function (error, results, fields) {
                 if (error) {
                     console.log('error', error)
