@@ -341,7 +341,7 @@ const startPhienSoCap = () => {
 
         // create user aảo trong phien
         let time_text1 = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
-        time_text1 = moment(time_text).format('HH:mm:ss')
+        time_text1 = moment(time_text1).format('HH:mm:ss')
         const user = {
             id: Math.random().toString(36).substring(7),
             money: Math.floor(Math.random() * 100000) * 100,
@@ -621,7 +621,7 @@ const startPhienTrungCap = () => {
 
         // create user aảo trong phien
         let time_text1 = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
-        time_text1 = moment(time_text).format('HH:mm:ss')
+        time_text1 = moment(time_text1).format('HH:mm:ss')
         const user = {
             id: Math.random().toString(36).substring(7),
             money: Math.floor(Math.random() * 100000) * 100,
@@ -902,7 +902,7 @@ const startPhienCaoCap = () => {
 
         // create user aảo trong phien
         let time_text1 = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
-        time_text1 = moment(time_text).format('HH:mm:ss')
+        time_text1 = moment(time_text1).format('HH:mm:ss')
         const user = {
             id: Math.random().toString(36).substring(7),
             money: Math.floor(Math.random() * 100000) * 100,
@@ -1184,7 +1184,7 @@ const startPhienVip = () => {
 
         // create user aảo trong phien
         let time_text1 = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
-        time_text1 = moment(time_text).format('HH:mm:ss')
+        time_text1 = moment(time_text1).format('HH:mm:ss')
         const user = {
             id: Math.random().toString(36).substring(7),
             money: Math.floor(Math.random() * 100000) * 100,
@@ -1289,7 +1289,7 @@ app.post('/dat-cuoc', (req, res, next) => {
                     return res.status(400).json({message: 'Phiên cược không tồn tại hoặc đã kết thúc'})
                 }
                 let time_text = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
-                time_text = moment(time_text).format('HH:mm:ss')
+                time_text = moment(time_text1).format('HH:mm:ss')
 
                 phien.users.push({
                     id: id,
