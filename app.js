@@ -1177,9 +1177,6 @@ const startPhienVip = () => {
         }
 
         // create user aảo trong phien
-        let timeZo = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
-        // format YYYY-MM-DD HH:MM:SS
-        timeZo = moment(created_at).format('HH:mm:ss')
         const user = {
             id: Math.random().toString(36).substring(7),
             money: Math.floor(Math.random() * 100000) * 100,
@@ -1189,7 +1186,7 @@ const startPhienVip = () => {
             // username: 'user' + Math.floor(Math.random() * 100),
             //user name random ky tu
             username: Math.random().toString(36).substring(7),
-            time: timeZo
+            time: new Date().toISOString().substr(11, 8)
         }
         setTimeout(() => {
             phien.users.push(user)
@@ -1283,6 +1280,8 @@ app.post('/dat-cuoc', (req, res, next) => {
                 if (!phien) {
                     return res.status(400).json({message: 'Phiên cược không tồn tại hoặc đã kết thúc'})
                 }
+                let time_text = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
+                time_text = moment(time_text).format('HH:mm:ss')
 
                 phien.users.push({
                     id: id,
@@ -1290,7 +1289,7 @@ app.post('/dat-cuoc', (req, res, next) => {
                     wanfa: wanfa,
                     result_money: result_money,
                     username: user.username,
-                    time: new Date().toISOString().substr(11, 8),
+                    time: time_text,
                 })
                 return res.status(200).json({message: 'Đặt cược thành công'})
             })
