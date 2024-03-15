@@ -340,6 +340,8 @@ const startPhienSoCap = () => {
         }
 
         // create user aảo trong phien
+        let time_text1 = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
+        time_text1 = moment(time_text).format('HH:mm:ss')
         const user = {
             id: Math.random().toString(36).substring(7),
             money: Math.floor(Math.random() * 100000) * 100,
@@ -349,7 +351,7 @@ const startPhienSoCap = () => {
             // username: 'user' + Math.floor(Math.random() * 100),
             //user name random ky tu
             username: Math.random().toString(36).substring(7),
-            time: new Date().toISOString().substr(11, 8)
+            time: time_text1
         }
         setTimeout(() => {
             phien.users.push(user)
@@ -618,6 +620,8 @@ const startPhienTrungCap = () => {
         }
 
         // create user aảo trong phien
+        let time_text1 = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
+        time_text1 = moment(time_text).format('HH:mm:ss')
         const user = {
             id: Math.random().toString(36).substring(7),
             money: Math.floor(Math.random() * 100000) * 100,
@@ -627,7 +631,7 @@ const startPhienTrungCap = () => {
             // username: 'user' + Math.floor(Math.random() * 100),
             //user name random ky tu
             username: Math.random().toString(36).substring(7),
-            time: new Date().toISOString().substr(11, 8)
+            time: time_text1
         }
         setTimeout(() => {
             phien.users.push(user)
@@ -897,6 +901,8 @@ const startPhienCaoCap = () => {
         }
 
         // create user aảo trong phien
+        let time_text1 = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
+        time_text1 = moment(time_text).format('HH:mm:ss')
         const user = {
             id: Math.random().toString(36).substring(7),
             money: Math.floor(Math.random() * 100000) * 100,
@@ -906,7 +912,7 @@ const startPhienCaoCap = () => {
             // username: 'user' + Math.floor(Math.random() * 100),
             //user name random ky tu
             username: Math.random().toString(36).substring(7),
-            time: new Date().toISOString().substr(11, 8)
+            time: time_text1
         }
         setTimeout(() => {
             phien.users.push(user)
@@ -1177,6 +1183,8 @@ const startPhienVip = () => {
         }
 
         // create user aảo trong phien
+        let time_text1 = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
+        time_text1 = moment(time_text).format('HH:mm:ss')
         const user = {
             id: Math.random().toString(36).substring(7),
             money: Math.floor(Math.random() * 100000) * 100,
@@ -1186,7 +1194,7 @@ const startPhienVip = () => {
             // username: 'user' + Math.floor(Math.random() * 100),
             //user name random ky tu
             username: Math.random().toString(36).substring(7),
-            time: new Date().toISOString().substr(11, 8)
+            time: time_text1
         }
         setTimeout(() => {
             phien.users.push(user)
