@@ -84,7 +84,7 @@ const startPhienSoCap = () => {
     if (phien == null) {
         return
     }
-    const minute = 1
+    const minute = 5
     const time = minute * 60 * 1000
     phiens.push(phien)
     let a = setInterval(() => {
@@ -365,7 +365,7 @@ const startPhienTrungCap = () => {
     if (phien == null) {
         return
     }
-    const minute = 1
+    const minute = 5
     const time = minute * 60 * 1000
     phiens.push(phien)
     let a = setInterval(() => {
@@ -646,7 +646,7 @@ const startPhienCaoCap = () => {
     if (phien == null) {
         return
     }
-    const minute = 1
+    const minute = 5
     const time = minute * 60 * 1000
     phiens.push(phien)
     let a = setInterval(() => {
@@ -928,7 +928,7 @@ const startPhienVip = () => {
     if (phien == null) {
         return
     }
-    const minute = 1
+    const minute = 5
     const time = minute * 60 * 1000
     phiens.push(phien)
     let a = setInterval(() => {
