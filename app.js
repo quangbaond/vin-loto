@@ -22,14 +22,14 @@ const room_prefix = {
         users: [],
         messages: [],
         min: 50000,
-        max: 100000
+        max: 200000
 
     },
     cao_cap: {
         name: 'cao_cap',
         users: [],
         messages: [],
-        min: 100000,
+        min: 200000,
         max: 500000
     },
     vip: {
@@ -37,7 +37,7 @@ const room_prefix = {
         users: [],
         messages: [],
         min: 500000,
-        max: 20000000
+        max: 30000000
     }
 }
 
