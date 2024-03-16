@@ -1236,7 +1236,11 @@ app.post('/dat-cuoc', (req, res, next) => {
     result_money = parseFloat(result_money)
 
     if (money < min || money > max) {
-        return res.status(400).json({message: `Số tiền cược phải từ ${min} đến ${max}`})
+        // format số tiền từ 2tr đến 100tr
+        const minText = min.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+        const maxText = max.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+
+        return res.status(400).json({message: `Số tiền cược phải từ ${minText} đến ${maxText}`})
     }
     db.query('SELECT * FROM users WHERE id = ?', [id], function (error, results, fields) {
 
