@@ -15,13 +15,13 @@ const room_prefix = {
         messages: [],
         // min là 2 triệu
         min: 1000,
-        max: 10000
+        max: 50000
     },
     trung_cap: {
         name: 'trung_cap',
         users: [],
         messages: [],
-        min: 10000,
+        min: 50000,
         max: 100000
 
     },
