@@ -14,30 +14,30 @@ const room_prefix = {
         users: [],
         messages: [],
         // min là 2 triệu
-        min: 2000,
-        max: 100000
+        min: 1000,
+        max: 10000
     },
     trung_cap: {
         name: 'trung_cap',
         users: [],
         messages: [],
-        min: 100000,
-        max: 5000000
+        min: 10000,
+        max: 100000
 
     },
     cao_cap: {
         name: 'cao_cap',
         users: [],
         messages: [],
-        min: 5000000,
-        max: 20000000
+        min: 100000,
+        max: 500000
     },
     vip: {
         name: 'vip',
         users: [],
         messages: [],
-        min: 20000000,
-        max: 100000000
+        min: 500000,
+        max: 20000000
     }
 }
 
