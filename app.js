@@ -142,6 +142,24 @@ const startPhienSoCap = () => {
                             const rate_chan_le = 1.95
                             const rate_lon_nho = 2.02
 
+                            if(value1 == 'Lớn' || value2 == 'Nhỏ') {
+                                phien.result = Math.floor(15 * 27)
+                                phien.result_lon_nho = 'Lớn'
+                                phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
+                            } else if(value1 === 'Nhỏ'  || value2 == 'Lớn') {
+                                phien.result = Math.floor(0 * 14)
+                                phien.result_lon_nho = 'Nhỏ'
+                                phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
+                            } else if(value1 === 'Chẵn' || value2 === 'Lẻ') {
+                                phien.result = Math.floor(Math.random() * 8) * 2;
+                                phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
+                                phien.result_chan_le = 'Chẵn'
+                            } else if(value1 === 'Lẻ' || value2 === 'Chẵn') {
+                                phien.result = (Math.floor(Math.random() * 7) + 15) * 2;
+                                phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
+                                phien.result_chan_le = 'Lẻ'
+                            }
+
 
                             if (phien.result > 15 && phien.result % 2 === 0) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
@@ -421,6 +439,24 @@ const startPhienTrungCap = () => {
                             // lấy ra kết quả của phiên
                             const rate_chan_le = 1.95
                             const rate_lon_nho = 2.02
+
+                            if(value1 == 'Lớn' || value2 == 'Nhỏ') {
+                                phien.result = Math.floor(15 * 27)
+                                phien.result_lon_nho = 'Lớn'
+                                phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
+                            } else if(value1 === 'Nhỏ'  || value2 == 'Lớn') {
+                                phien.result = Math.floor(0 * 14)
+                                phien.result_lon_nho = 'Nhỏ'
+                                phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
+                            } else if(value1 === 'Chẵn' || value2 === 'Lẻ') {
+                                phien.result = Math.floor(Math.random() * 8) * 2;
+                                phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
+                                phien.result_chan_le = 'Chẵn'
+                            } else if(value1 === 'Lẻ' || value2 === 'Chẵn') {
+                                phien.result = (Math.floor(Math.random() * 7) + 15) * 2;
+                                phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
+                                phien.result_chan_le = 'Lẻ'
+                            }
 
 
                             if (phien.result > 15 && phien.result % 2 === 0) {
@@ -703,6 +739,24 @@ const startPhienCaoCap = () => {
                             const rate_chan_le = 1.95
                             const rate_lon_nho = 2.02
 
+                            if(value1 == 'Lớn' || value2 == 'Nhỏ') {
+                                phien.result = Math.floor(15 * 27)
+                                phien.result_lon_nho = 'Lớn'
+                                phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
+                            } else if(value1 === 'Nhỏ'  || value2 == 'Lớn') {
+                                phien.result = Math.floor(0 * 14)
+                                phien.result_lon_nho = 'Nhỏ'
+                                phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
+                            } else if(value1 === 'Chẵn' || value2 === 'Lẻ') {
+                                phien.result = Math.floor(Math.random() * 8) * 2;
+                                phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
+                                phien.result_chan_le = 'Chẵn'
+                            } else if(value1 === 'Lẻ' || value2 === 'Chẵn') {
+                                phien.result = (Math.floor(Math.random() * 7) + 15) * 2;
+                                phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
+                                phien.result_chan_le = 'Lẻ'
+                            }
+
 
                             if (phien.result > 15 && phien.result % 2 === 0) {
                                 if (value1 === 'Lớn' && value2 === 'Nhỏ' || value1 === 'Nhỏ' && value2 === 'Lớn') {
@@ -984,6 +1038,24 @@ const startPhienVip = () => {
                             // lấy ra kết quả của phiên
                             const rate_chan_le = 1.95
                             const rate_lon_nho = 2.02
+
+                            if(value1 == 'Lớn' || value2 == 'Nhỏ') {
+                                phien.result = Math.floor(15 * 27)
+                                phien.result_lon_nho = 'Lớn'
+                                phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
+                            } else if(value1 === 'Nhỏ'  || value2 == 'Lớn') {
+                                phien.result = Math.floor(0 * 14)
+                                phien.result_lon_nho = 'Nhỏ'
+                                phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
+                            } else if(value1 === 'Chẵn' || value2 === 'Lẻ') {
+                                phien.result = Math.floor(Math.random() * 8) * 2;
+                                phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
+                                phien.result_chan_le = 'Chẵn'
+                            } else if(value1 === 'Lẻ' || value2 === 'Chẵn') {
+                                phien.result = (Math.floor(Math.random() * 7) + 15) * 2;
+                                phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
+                                phien.result_chan_le = 'Lẻ'
+                            }
 
 
                             if (phien.result > 15 && phien.result % 2 === 0) {
