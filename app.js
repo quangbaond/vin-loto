@@ -376,7 +376,7 @@ const startPhienSoCap = () => {
         }, Math.floor(Math.random() * 5000))
         io.emit('so-cap', phien)
 
-    }, 1500)
+    }, 1000)
 }
 const startPhienTrungCap = () => {
     const phien = createPhien('trung-cap')
@@ -674,7 +674,7 @@ const startPhienTrungCap = () => {
         }, Math.floor(Math.random() * 5000))
         io.emit('trung-cap', phien)
 
-    }, 1500)
+    }, 1000)
 }
 
 const startPhienCaoCap = () => {
@@ -973,7 +973,7 @@ const startPhienCaoCap = () => {
         }, Math.floor(Math.random() * 5000))
         io.emit('cao-cap', phien)
 
-    }, 1500)
+    }, 1000)
 }
 
 
@@ -1273,7 +1273,7 @@ const startPhienVip = () => {
         }, Math.floor(Math.random() * 5000))
         io.emit('vip', phien)
 
-    }, 1500)
+    }, 1000)
 }
 
 
