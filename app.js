@@ -21,22 +21,22 @@ const room_prefix = {
         name: 'trung_cap',
         users: [],
         messages: [],
-        min: 100000,
-        max: 500000
+        min: 50000,
+        max: 150000
 
     },
     cao_cap: {
         name: 'cao_cap',
         users: [],
         messages: [],
-        min: 300000,
-        max: 500000
+        min: 150000,
+        max: 300000
     },
     vip: {
         name: 'vip',
         users: [],
         messages: [],
-        min: 500000,
+        min: 300000,
         max: 2000000
     }
 }
