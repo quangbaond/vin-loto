@@ -3,7 +3,7 @@ const app = express()
 const port = 3000
 const bodyParser = require('body-parser')
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 const cors = require('cors')
 const db = require('./db')
@@ -14,22 +14,22 @@ const room_prefix = {
         users: [],
         messages: [],
         // min là 2 triệu
-        min: 1000,
+        min: 2000,
         max: 50000
     },
     trung_cap: {
         name: 'trung_cap',
         users: [],
         messages: [],
-        min: 50000,
-        max: 200000
+        min: 100000,
+        max: 500000
 
     },
     cao_cap: {
         name: 'cao_cap',
         users: [],
         messages: [],
-        min: 200000,
+        min: 300000,
         max: 500000
     },
     vip: {
@@ -37,7 +37,7 @@ const room_prefix = {
         users: [],
         messages: [],
         min: 500000,
-        max: 30000000
+        max: 2000000
     }
 }
 
@@ -50,8 +50,6 @@ const io = require('socket.io')(3001, {
 })
 
 const createPhien = (room) => {
-
-
     const so1 = Math.floor(Math.random() * 9)
     const so2 = Math.floor(Math.random() * 9)
     const so3 = Math.floor(Math.random() * 9)
@@ -142,19 +140,19 @@ const startPhienSoCap = () => {
                             const rate_chan_le = 1.95
                             const rate_lon_nho = 2.02
 
-                            if(value1 == 'Lớn' || value2 == 'Nhỏ') {
+                            if (value1 == 'Lớn' || value2 == 'Nhỏ') {
                                 phien.result = Math.floor(15 * 27)
                                 phien.result_lon_nho = 'Lớn'
                                 phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
-                            } else if(value1 === 'Nhỏ'  || value2 == 'Lớn') {
+                            } else if (value1 === 'Nhỏ' || value2 == 'Lớn') {
                                 phien.result = Math.floor(0 * 14)
                                 phien.result_lon_nho = 'Nhỏ'
                                 phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
-                            } else if(value1 === 'Chẵn' || value2 === 'Lẻ') {
+                            } else if (value1 === 'Chẵn' || value2 === 'Lẻ') {
                                 phien.result = Math.floor(Math.random() * 8) * 2;
                                 phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
                                 phien.result_chan_le = 'Chẵn'
-                            } else if(value1 === 'Lẻ' || value2 === 'Chẵn') {
+                            } else if (value1 === 'Lẻ' || value2 === 'Chẵn') {
                                 phien.result = (Math.floor(Math.random() * 7) + 15) * 2;
                                 phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
                                 phien.result_chan_le = 'Lẻ'
@@ -201,21 +199,21 @@ const startPhienSoCap = () => {
                             const type = wans[0]
                             const value = wans[1]
                             const rate = parseFloat(wans[2])
-                        
-                            if(value === 'Lớn') {
+
+                            if (value === 'Lớn') {
                                 phien.result = Math.floor(15 * 27)
                                 phien.result_lon_nho = 'Lớn'
                                 phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
-                            } else if(value === 'Nhỏ') {
+                            } else if (value === 'Nhỏ') {
                                 phien.result = Math.floor(0 * 14)
                                 phien.result_lon_nho = 'Nhỏ'
                                 phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
-                            } 
-                            else if(value === 'Chẵn') {
+                            }
+                            else if (value === 'Chẵn') {
                                 phien.result = Math.floor(Math.random() * 8) * 2;
                                 phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
                                 phien.result_chan_le = 'Chẵn'
-                            } else if(value === 'Lẻ') {
+                            } else if (value === 'Lẻ') {
                                 phien.result = (Math.floor(Math.random() * 7) + 15) * 2;
                                 phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
                                 phien.result_chan_le = 'Lẻ'
@@ -223,7 +221,7 @@ const startPhienSoCap = () => {
 
                             io.emit('so-cap', phien)
                             result_money = lotos.result_money * rate
-                            
+
                         } else if (wanfa.length === 4) {
                             const w1 = wanfa[0]
                             const wans1 = w1.split('@')
@@ -358,7 +356,7 @@ const startPhienSoCap = () => {
         }
 
         // create user aảo trong phien
-        let time_text1 = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
+        let time_text1 = new Date().toLocaleString('vn-Vi', { timeZone: 'Asia/Ho_Chi_Minh' })
         time_text1 = moment(time_text1).format('HH:mm:ss')
         const user = {
             id: Math.random().toString(36).substring(7),
@@ -440,19 +438,19 @@ const startPhienTrungCap = () => {
                             const rate_chan_le = 1.95
                             const rate_lon_nho = 2.02
 
-                            if(value1 == 'Lớn' || value2 == 'Nhỏ') {
+                            if (value1 == 'Lớn' || value2 == 'Nhỏ') {
                                 phien.result = Math.floor(15 * 27)
                                 phien.result_lon_nho = 'Lớn'
                                 phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
-                            } else if(value1 === 'Nhỏ'  || value2 == 'Lớn') {
+                            } else if (value1 === 'Nhỏ' || value2 == 'Lớn') {
                                 phien.result = Math.floor(0 * 14)
                                 phien.result_lon_nho = 'Nhỏ'
                                 phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
-                            } else if(value1 === 'Chẵn' || value2 === 'Lẻ') {
+                            } else if (value1 === 'Chẵn' || value2 === 'Lẻ') {
                                 phien.result = Math.floor(Math.random() * 8) * 2;
                                 phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
                                 phien.result_chan_le = 'Chẵn'
-                            } else if(value1 === 'Lẻ' || value2 === 'Chẵn') {
+                            } else if (value1 === 'Lẻ' || value2 === 'Chẵn') {
                                 phien.result = (Math.floor(Math.random() * 7) + 15) * 2;
                                 phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
                                 phien.result_chan_le = 'Lẻ'
@@ -499,21 +497,21 @@ const startPhienTrungCap = () => {
                             const type = wans[0]
                             const value = wans[1]
                             const rate = parseFloat(wans[2])
-                        
-                            if(value === 'Lớn') {
+
+                            if (value === 'Lớn') {
                                 phien.result = Math.floor(15 * 27)
                                 phien.result_lon_nho = 'Lớn'
                                 phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
-                            } else if(value === 'Nhỏ') {
+                            } else if (value === 'Nhỏ') {
                                 phien.result = Math.floor(0 * 14)
                                 phien.result_lon_nho = 'Nhỏ'
                                 phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
-                            } 
-                            else if(value === 'Chẵn') {
+                            }
+                            else if (value === 'Chẵn') {
                                 phien.result = Math.floor(Math.random() * 8) * 2;
                                 phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
                                 phien.result_chan_le = 'Chẵn'
-                            } else if(value === 'Lẻ') {
+                            } else if (value === 'Lẻ') {
                                 phien.result = (Math.floor(Math.random() * 7) + 15) * 2;
                                 phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
                                 phien.result_chan_le = 'Lẻ'
@@ -521,7 +519,7 @@ const startPhienTrungCap = () => {
 
                             io.emit('trung-cap', phien)
                             result_money = lotos.result_money * rate
-                            
+
                         } else if (wanfa.length === 4) {
                             const w1 = wanfa[0]
                             const wans1 = w1.split('@')
@@ -656,7 +654,7 @@ const startPhienTrungCap = () => {
         }
 
         // create user aảo trong phien
-        let time_text1 = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
+        let time_text1 = new Date().toLocaleString('vn-Vi', { timeZone: 'Asia/Ho_Chi_Minh' })
         time_text1 = moment(time_text1).format('HH:mm:ss')
         const user = {
             id: Math.random().toString(36).substring(7),
@@ -739,19 +737,19 @@ const startPhienCaoCap = () => {
                             const rate_chan_le = 1.95
                             const rate_lon_nho = 2.02
 
-                            if(value1 == 'Lớn' || value2 == 'Nhỏ') {
+                            if (value1 == 'Lớn' || value2 == 'Nhỏ') {
                                 phien.result = Math.floor(15 * 27)
                                 phien.result_lon_nho = 'Lớn'
                                 phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
-                            } else if(value1 === 'Nhỏ'  || value2 == 'Lớn') {
+                            } else if (value1 === 'Nhỏ' || value2 == 'Lớn') {
                                 phien.result = Math.floor(0 * 14)
                                 phien.result_lon_nho = 'Nhỏ'
                                 phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
-                            } else if(value1 === 'Chẵn' || value2 === 'Lẻ') {
+                            } else if (value1 === 'Chẵn' || value2 === 'Lẻ') {
                                 phien.result = Math.floor(Math.random() * 8) * 2;
                                 phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
                                 phien.result_chan_le = 'Chẵn'
-                            } else if(value1 === 'Lẻ' || value2 === 'Chẵn') {
+                            } else if (value1 === 'Lẻ' || value2 === 'Chẵn') {
                                 phien.result = (Math.floor(Math.random() * 7) + 15) * 2;
                                 phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
                                 phien.result_chan_le = 'Lẻ'
@@ -798,21 +796,21 @@ const startPhienCaoCap = () => {
                             const type = wans[0]
                             const value = wans[1]
                             const rate = parseFloat(wans[2])
-                        
-                            if(value === 'Lớn') {
+
+                            if (value === 'Lớn') {
                                 phien.result = Math.floor(15 * 27)
                                 phien.result_lon_nho = 'Lớn'
                                 phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
-                            } else if(value === 'Nhỏ') {
+                            } else if (value === 'Nhỏ') {
                                 phien.result = Math.floor(0 * 14)
                                 phien.result_lon_nho = 'Nhỏ'
                                 phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
-                            } 
-                            else if(value === 'Chẵn') {
+                            }
+                            else if (value === 'Chẵn') {
                                 phien.result = Math.floor(Math.random() * 8) * 2;
                                 phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
                                 phien.result_chan_le = 'Chẵn'
-                            } else if(value === 'Lẻ') {
+                            } else if (value === 'Lẻ') {
                                 phien.result = (Math.floor(Math.random() * 7) + 15) * 2;
                                 phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
                                 phien.result_chan_le = 'Lẻ'
@@ -820,7 +818,7 @@ const startPhienCaoCap = () => {
 
                             io.emit('cao-cap', phien)
                             result_money = lotos.result_money * rate
-                            
+
                         } else if (wanfa.length === 4) {
                             const w1 = wanfa[0]
                             const wans1 = w1.split('@')
@@ -955,7 +953,7 @@ const startPhienCaoCap = () => {
         }
 
         // create user aảo trong phien
-        let time_text1 = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
+        let time_text1 = new Date().toLocaleString('vn-Vi', { timeZone: 'Asia/Ho_Chi_Minh' })
         time_text1 = moment(time_text1).format('HH:mm:ss')
         const user = {
             id: Math.random().toString(36).substring(7),
@@ -1039,19 +1037,19 @@ const startPhienVip = () => {
                             const rate_chan_le = 1.95
                             const rate_lon_nho = 2.02
 
-                            if(value1 == 'Lớn' || value2 == 'Nhỏ') {
+                            if (value1 == 'Lớn' || value2 == 'Nhỏ') {
                                 phien.result = Math.floor(15 * 27)
                                 phien.result_lon_nho = 'Lớn'
                                 phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
-                            } else if(value1 === 'Nhỏ'  || value2 == 'Lớn') {
+                            } else if (value1 === 'Nhỏ' || value2 == 'Lớn') {
                                 phien.result = Math.floor(0 * 14)
                                 phien.result_lon_nho = 'Nhỏ'
                                 phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
-                            } else if(value1 === 'Chẵn' || value2 === 'Lẻ') {
+                            } else if (value1 === 'Chẵn' || value2 === 'Lẻ') {
                                 phien.result = Math.floor(Math.random() * 8) * 2;
                                 phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
                                 phien.result_chan_le = 'Chẵn'
-                            } else if(value1 === 'Lẻ' || value2 === 'Chẵn') {
+                            } else if (value1 === 'Lẻ' || value2 === 'Chẵn') {
                                 phien.result = (Math.floor(Math.random() * 7) + 15) * 2;
                                 phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
                                 phien.result_chan_le = 'Lẻ'
@@ -1098,21 +1096,21 @@ const startPhienVip = () => {
                             const type = wans[0]
                             const value = wans[1]
                             const rate = parseFloat(wans[2])
-                        
-                            if(value === 'Lớn') {
+
+                            if (value === 'Lớn') {
                                 phien.result = Math.floor(15 * 27)
                                 phien.result_lon_nho = 'Lớn'
                                 phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
-                            } else if(value === 'Nhỏ') {
+                            } else if (value === 'Nhỏ') {
                                 phien.result = Math.floor(0 * 14)
                                 phien.result_lon_nho = 'Nhỏ'
                                 phien.result_chan_le = phien.result % 2 === 0 ? 'Chẵn' : 'Lẻ'
-                            } 
-                            else if(value === 'Chẵn') {
+                            }
+                            else if (value === 'Chẵn') {
                                 phien.result = Math.floor(Math.random() * 8) * 2;
                                 phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
                                 phien.result_chan_le = 'Chẵn'
-                            } else if(value === 'Lẻ') {
+                            } else if (value === 'Lẻ') {
                                 phien.result = (Math.floor(Math.random() * 7) + 15) * 2;
                                 phien.result_lon_nho = phien.result > 15 ? 'Lớn' : 'Nhỏ'
                                 phien.result_chan_le = 'Lẻ'
@@ -1120,7 +1118,7 @@ const startPhienVip = () => {
 
                             io.emit('vip', phien)
                             result_money = lotos.result_money * rate
-                            
+
                         } else if (wanfa.length === 4) {
                             const w1 = wanfa[0]
                             const wans1 = w1.split('@')
@@ -1255,7 +1253,7 @@ const startPhienVip = () => {
         }
 
         // create user aảo trong phien
-        let time_text1 = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
+        let time_text1 = new Date().toLocaleString('vn-Vi', { timeZone: 'Asia/Ho_Chi_Minh' })
         time_text1 = moment(time_text1).format('HH:mm:ss')
         const user = {
             id: Math.random().toString(36).substring(7),
@@ -1297,7 +1295,7 @@ const corsOpts = {
 app.use(cors(corsOpts));
 app.post('/dat-cuoc', (req, res, next) => {
     res.setHeader('Content-Type', 'application/json')
-    let {id, room, money, wanfa, result_money, phien_id} = req.body
+    let { id, room, money, wanfa, result_money, phien_id } = req.body
 
     const roomName = room
 
@@ -1312,82 +1310,93 @@ app.post('/dat-cuoc', (req, res, next) => {
         const minText = min.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
         const maxText = max.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 
-        return res.status(400).json({message: `Số tiền cược phải từ ${minText} đến ${maxText}`})
+        return res.status(400).json({ message: `Số tiền cược phải từ ${minText} đến ${maxText}` })
     }
     db.query('SELECT * FROM users WHERE id = ?', [id], function (error, results, fields) {
 
         if (error) {
             console.log('error.message', error.message)
-            return res.status(500).json({message: error.message})
+            return res.status(500).json({ message: error.message })
         }
         if (results.length === 0) {
-            return res.status(404).json({message: 'user not found'})
+            return res.status(404).json({ message: 'user not found' })
         }
         const user = results[0]
         if (user.balance < money) {
-            return res.status(400).json({message: 'Số dư không đủ để đặt cược'})
+            return res.status(400).json({ message: 'Số dư không đủ để đặt cược' })
         }
-        const total = user.balance - result_money
-        db.query('UPDATE users SET balance = ? WHERE id = ?', [total, id], function (error, results, fields) {
+
+        // kiểm tra user đã đặt cược trong phiên này chưa
+        db.query('SELECT * FROM lotos WHERE user_id = ? AND phien_id = ?', [id, phien_id], function (error, results, fields) {
             if (error) {
-                return res.status(500).json({message: error.message})
+                console.log('error.message', error.message)
+                return res.status(500).json({ message: error.message })
             }
-            // const created_at = new Date().toISOString().substr(0, 19).replace('T', ' ')
-            // created at giờ việt nam
-
-            // const updated_at = new Date().toISOString().substr(0, 19).replace('T', ' ')
-            let created_at = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
-            let updated_at = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
-            // format YYYY-MM-DD HH:MM:SS
-            created_at = moment(created_at).format('YYYY-MM-DD HH:mm:ss')
-            updated_at = moment(updated_at).format('YYYY-MM-DD HH:mm:ss')
-            db.query('INSERT INTO lotos (user_id, room, money, wanfan, result_money, phien_id, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', [id, roomName, money, wanfa, result_money, phien_id, created_at, updated_at], function (error, results, fields) {
+            if (results.length > 0) {
+                return res.status(400).json({ message: 'Bạn đã đặt cược trong phiên này' })
+            }
+            // trừ tiền cược của user
+            const total = user.balance - result_money
+            db.query('UPDATE users SET balance = ? WHERE id = ?', [total, id], function (error, results, fields) {
                 if (error) {
-                    console.log('error', error)
-                    return res.status(500).json({message: error.message})
+                    return res.status(500).json({ message: error.message })
                 }
+                // const created_at = new Date().toISOString().substr(0, 19).replace('T', ' ')
+                // created at giờ việt nam
 
-                // trả về socket số tiền còn lại của user
-                db.query('SELECT * FROM users WHERE id = ?', [id], function (error, results, fields) {
+                // const updated_at = new Date().toISOString().substr(0, 19).replace('T', ' ')
+                let created_at = new Date().toLocaleString('vn-Vi', { timeZone: 'Asia/Ho_Chi_Minh' })
+                let updated_at = new Date().toLocaleString('vn-Vi', { timeZone: 'Asia/Ho_Chi_Minh' })
+                // format YYYY-MM-DD HH:MM:SS
+                created_at = moment(created_at).format('YYYY-MM-DD HH:mm:ss')
+                updated_at = moment(updated_at).format('YYYY-MM-DD HH:mm:ss')
+                db.query('INSERT INTO lotos (user_id, room, money, wanfan, result_money, phien_id, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', [id, roomName, money, wanfa, result_money, phien_id, created_at, updated_at], function (error, results, fields) {
                     if (error) {
-                        console.log('error.message', error.message)
-                        return res.status(500).json({message: error.message})
+                        console.log('error', error)
+                        return res.status(500).json({ message: error.message })
                     }
-                    const user = results[0]
-                    io.emit(`user-${user.id}`, {
-                        message: `Bạn đã đặt cược thành công ${result_money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`,
-                        balance: total,
+
+                    // trả về socket số tiền còn lại của user
+                    db.query('SELECT * FROM users WHERE id = ?', [id], function (error, results, fields) {
+                        if (error) {
+                            console.log('error.message', error.message)
+                            return res.status(500).json({ message: error.message })
+                        }
+                        const user = results[0]
+                        io.emit(`user-${user.id}`, {
+                            message: `Bạn đã đặt cược thành công ${result_money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`,
+                            balance: total,
+                        })
                     })
-                })
 
-                const phien = phiens.find(p => p.id == phien_id && p.active)
-                if (!phien) {
-                    return res.status(400).json({message: 'Phiên cược không tồn tại hoặc đã kết thúc'})
-                }
-                let time_text1 = new Date().toLocaleString('vn-Vi', {timeZone: 'Asia/Ho_Chi_Minh'})
-                time_text1 = moment(time_text1).format('HH:mm:ss')
+                    const phien = phiens.find(p => p.id == phien_id && p.active)
+                    if (!phien) {
+                        return res.status(400).json({ message: 'Phiên cược không tồn tại hoặc đã kết thúc' })
+                    }
+                    let time_text1 = new Date().toLocaleString('vn-Vi', { timeZone: 'Asia/Ho_Chi_Minh' })
+                    time_text1 = moment(time_text1).format('HH:mm:ss')
 
-                phien.users.push({
-                    id: id,
-                    money: money,
-                    wanfa: wanfa,
-                    result_money: result_money,
-                    username: user.username,
-                    time: time_text1,
+                    phien.users.push({
+                        id: id,
+                        money: money,
+                        wanfa: wanfa,
+                        result_money: result_money,
+                        username: user.username,
+                        time: time_text1,
+                    })
+                    return res.status(200).json({ message: 'Đặt cược thành công' })
                 })
-                return res.status(200).json({message: 'Đặt cược thành công'})
             })
         })
+
     })
 
-})
+    // admin get all phien
+    app.get('/phien', (req, res) => {
+        res.setHeader('Content-Type', 'application/json')
+        res.status(200).json({ phiens: phiens })
+    })
 
-// admin get all phien
-app.get('/phien', (req, res) => {
-    res.setHeader('Content-Type', 'application/json')
-    res.status(200).json({phiens: phiens})
-})
-
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+    app.listen(port, () => {
+        console.log(`Example app listening on port ${port}`)
+    })
