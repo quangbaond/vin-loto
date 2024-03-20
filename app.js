@@ -1335,68 +1335,70 @@ app.post('/dat-cuoc', (req, res, next) => {
             if (results.length > 0) {
                 return res.status(400).json({ message: 'Bạn đã đặt cược trong phiên này' })
             }
-            // trừ tiền cược của user
-            const total = user.balance - result_money
-            db.query('UPDATE users SET balance = ? WHERE id = ?', [total, id], function (error, results, fields) {
+
+        })
+        // trừ tiền cược của user
+        const total = user.balance - result_money
+        db.query('UPDATE users SET balance = ? WHERE id = ?', [total, id], function (error, results, fields) {
+            if (error) {
+                return res.status(500).json({ message: error.message })
+            }
+            // const created_at = new Date().toISOString().substr(0, 19).replace('T', ' ')
+            // created at giờ việt nam
+
+            // const updated_at = new Date().toISOString().substr(0, 19).replace('T', ' ')
+            let created_at = new Date().toLocaleString('vn-Vi', { timeZone: 'Asia/Ho_Chi_Minh' })
+            let updated_at = new Date().toLocaleString('vn-Vi', { timeZone: 'Asia/Ho_Chi_Minh' })
+            // format YYYY-MM-DD HH:MM:SS
+            created_at = moment(created_at).format('YYYY-MM-DD HH:mm:ss')
+            updated_at = moment(updated_at).format('YYYY-MM-DD HH:mm:ss')
+            db.query('INSERT INTO lotos (user_id, room, money, wanfan, result_money, phien_id, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', [id, roomName, money, wanfa, result_money, phien_id, created_at, updated_at], function (error, results, fields) {
                 if (error) {
+                    console.log('error', error)
                     return res.status(500).json({ message: error.message })
                 }
-                // const created_at = new Date().toISOString().substr(0, 19).replace('T', ' ')
-                // created at giờ việt nam
 
-                // const updated_at = new Date().toISOString().substr(0, 19).replace('T', ' ')
-                let created_at = new Date().toLocaleString('vn-Vi', { timeZone: 'Asia/Ho_Chi_Minh' })
-                let updated_at = new Date().toLocaleString('vn-Vi', { timeZone: 'Asia/Ho_Chi_Minh' })
-                // format YYYY-MM-DD HH:MM:SS
-                created_at = moment(created_at).format('YYYY-MM-DD HH:mm:ss')
-                updated_at = moment(updated_at).format('YYYY-MM-DD HH:mm:ss')
-                db.query('INSERT INTO lotos (user_id, room, money, wanfan, result_money, phien_id, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', [id, roomName, money, wanfa, result_money, phien_id, created_at, updated_at], function (error, results, fields) {
+                // trả về socket số tiền còn lại của user
+                db.query('SELECT * FROM users WHERE id = ?', [id], function (error, results, fields) {
                     if (error) {
-                        console.log('error', error)
+                        console.log('error.message', error.message)
                         return res.status(500).json({ message: error.message })
                     }
-
-                    // trả về socket số tiền còn lại của user
-                    db.query('SELECT * FROM users WHERE id = ?', [id], function (error, results, fields) {
-                        if (error) {
-                            console.log('error.message', error.message)
-                            return res.status(500).json({ message: error.message })
-                        }
-                        const user = results[0]
-                        io.emit(`user-${user.id}`, {
-                            message: `Bạn đã đặt cược thành công ${result_money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`,
-                            balance: total,
-                        })
+                    const user = results[0]
+                    io.emit(`user-${user.id}`, {
+                        message: `Bạn đã đặt cược thành công ${result_money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`,
+                        balance: total,
                     })
-
-                    const phien = phiens.find(p => p.id == phien_id && p.active)
-                    if (!phien) {
-                        return res.status(400).json({ message: 'Phiên cược không tồn tại hoặc đã kết thúc' })
-                    }
-                    let time_text1 = new Date().toLocaleString('vn-Vi', { timeZone: 'Asia/Ho_Chi_Minh' })
-                    time_text1 = moment(time_text1).format('HH:mm:ss')
-
-                    phien.users.push({
-                        id: id,
-                        money: money,
-                        wanfa: wanfa,
-                        result_money: result_money,
-                        username: user.username,
-                        time: time_text1,
-                    })
-                    return res.status(200).json({ message: 'Đặt cược thành công' })
                 })
+
+                const phien = phiens.find(p => p.id == phien_id && p.active)
+                if (!phien) {
+                    return res.status(400).json({ message: 'Phiên cược không tồn tại hoặc đã kết thúc' })
+                }
+                let time_text1 = new Date().toLocaleString('vn-Vi', { timeZone: 'Asia/Ho_Chi_Minh' })
+                time_text1 = moment(time_text1).format('HH:mm:ss')
+
+                phien.users.push({
+                    id: id,
+                    money: money,
+                    wanfa: wanfa,
+                    result_money: result_money,
+                    username: user.username,
+                    time: time_text1,
+                })
+                return res.status(200).json({ message: 'Đặt cược thành công' })
             })
         })
-
     })
 
-    // admin get all phien
-    app.get('/phien', (req, res) => {
-        res.setHeader('Content-Type', 'application/json')
-        res.status(200).json({ phiens: phiens })
-    })
+})
 
-    app.listen(port, () => {
-        console.log(`Example app listening on port ${port}`)
-    })
+// admin get all phien
+app.get('/phien', (req, res) => {
+    res.setHeader('Content-Type', 'application/json')
+    res.status(200).json({ phiens: phiens })
+})
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
